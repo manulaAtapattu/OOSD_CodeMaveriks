@@ -1,0 +1,127 @@
+<?php
+session_start();
+$user=$_SESSION['user'];
+?>
+
+<html>
+
+<head>
+        <title>Sign Up Form</title>
+        <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/styleSignUp.css">
+		 <script>
+var el = document.getElementById('myCoolForm');
+
+el.addEventListener('submit', function(){
+    return confirm('Are you sure you want to submit this complaint?');
+}, false);
+</script>
+    </head>
+
+<body>
+  
+  <div id="main">
+  <header>
+  <div id="logo">
+        <div id="logo_text">
+          <h1><a href="index.html" style="width:10px">Road Development Authority<span class="logo_colour">#link</span></a></h1>
+          <h2>#POST#NAME</h2>
+        </div>
+      </div>
+	  <nav>
+        <div id="menu_container">
+          <ul class="sf-menu" id="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="MessageBoard.html">Message Board</a></li>
+			<li><a href="contact info.html">Contact Info</a></li>
+            <li><a href="#">Other Projects</a>
+            <ul>
+                <li><a href="#">Ongoing Projects</a>
+				  <ul>
+                    <li><a href="#">Project1</a></li>
+                    <li><a href="#">Project3</a></li>
+                    <li><a href="#">Project4</a></li>
+                    
+                  </ul>
+				 </li>
+                <li><a href="#">Finished Projects</a>
+                  <ul>
+                    <li><a href="#">ProjectZ1</a></li>
+                    <li><a href="#">ProjectZ2</a></li>
+                    <li><a href="#">ProjectZ3</a></li>
+                    
+                  </ul>
+                </li>
+                <li><a href="#">Upcoming Projects</a>
+                  <ul>
+                    <li><a href="#">ProjectC</a></li>
+                    <li><a href="#">ProjectD</a></li>
+                    <li><a href="#">ProjectE</a></li>
+                
+              </ul>
+            </li>
+			</ul>
+            </li><li><a href="enter_info.php">Log out</a></li>
+          
+        </ul></div>
+      </nav>
+	  </header>
+<form action="recordComplaint.php" method="post" onsubmit="return confirm('Are you sure you want to submit this complaint?');">
+      
+        <h1><b>Create Complaint</b></h1>
+        
+        <fieldset>
+          <label>Complaint Priority:</label>
+          <input type="radio" id="priority" value="top" name="priority"><label for="priority" class="light">Top Priority</label><br>
+          <input type="radio" id="priority" value="middle" name="priority"><label for="priority" class="light">Middle Priority</label><br>
+          <input type="radio" id="priority" value="low" name="priority"><label for="priority" class="light">Low Priority</label><br>
+          <br>  
+          <label for="name">Reguarding:</label>
+          <input type="text" id="info" name="reguarding">
+		  <label for="name">Location:</label>
+          <input type="text" id="location" name="complaintLocation">
+
+        </fieldset>
+        
+          <label for="other">Other:</label>
+          <input type=varchar id="other" name="other">
+        
+        <fieldset>
+        <label for="job">Problems Caused:</label>
+        <input type="text" id="problems" name="problems">
+        <label for="job">Brief porcedure for completion:</label>
+        <input type="text" id="procedure" name="procedure">
+        <label for="job">Expected Project Duration (Estimation in number of days):</label>
+        <input type="text" id="time" name="estimatedTime"  >
+        <label for="job">Expected Project Cost (Estimation in Rupees):</label>
+        <input type="text" id="cost" name="estimatedCost">
+        <label for="job">Employee Requirements:</label>
+        <input type="text" id="empReq" name="empReq">
+        </fieldset>
+    
+        <label><b>Submit Complaint to Cheif Engineer:</b></label><br>
+        <button type="submit">Submit Complaint</button>
+      </form>
+    <div id="scroll">
+      <a title="Scroll to the top" class="top" href="#"><img src="images/top.png" alt="top"></a>
+    </div>
+    <footer>
+      <p><img src="images/twitter.png" alt="twitter">&nbsp;<img src="images/facebook.png" alt="facebook">&nbsp;<img src="images/rss.png" alt="rss"></p>
+      
+      <p>Copyright © COdeMaveriks | <a href="#">Heart Internet Domain Names</a> | <a href="http://www.css3templates.co.uk/">design from css3templates.co.uk</a></p>
+    </footer>
+  </div>
+    <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
+  <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('ul.sf-menu').sooperfish();
+      $('.top').click(function() {$('html, body').animate({scrollTop:0}, 'fast'); return false;});
+    });
+  </script>
+
+
+</body></html>
